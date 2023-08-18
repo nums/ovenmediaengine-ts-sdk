@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "declaration": true,
       "target": "es6",
       "module": "commonjs",
       "outDir": "./dist", 
@@ -9,6 +10,7 @@
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true
     },
+    "files": ["src/index.ts"],
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]
   }
