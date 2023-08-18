@@ -39,11 +39,11 @@ omeSDK.setVersion('v1');
 Use the provided methods from the SDK to make calls to the API.
 
 ```typescript
-// Example: Fetch the list of applications
+// Example: Fetch the list of Virtual Host
 omeSDK.getVirtualHost().then(response => {
     console.log(response.data);
 }).catch(error => {
-    console.error("Error fetching applications:", error);
+    console.error("Error fetching Virtual Host:", error);
 });
 ```
 
