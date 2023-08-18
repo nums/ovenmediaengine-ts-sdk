@@ -1,7 +1,3 @@
-Certainly! Here's a README for your SDK in English:
-
----
-
 # Oven Media Engine TypeScript SDK
 
 This SDK provides a TypeScript interface for seamlessly interacting with the Oven Media Engine (OME) REST API.
@@ -72,5 +68,3 @@ This will run the sample script located in the `samples` folder.
 Contributions are welcome! Please create an issue or pull request for any suggestions or improvements.
 
 ## License
-
----
