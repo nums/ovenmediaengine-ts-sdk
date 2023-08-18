@@ -14,9 +14,8 @@ const omeSDK = new OvenMediaEngineSDK({ baseURL: process.env.OME_BASE_URL as str
 omeSDK.setAuthorization(process.env.OME_ACCESS_TOKEN as string)
 omeSDK.setVersion('v1');
 
-// Utilisation
 omeSDK.getVirtualHost().then(response => {
     console.log(response.data);
 }).catch(error => {
-    console.error("Erreur lors de la récupération des applications:", error);
+    console.error("Error:", error);
 });
