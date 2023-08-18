@@ -40,7 +40,7 @@ Use the provided methods from the SDK to make calls to the API.
 
 ```typescript
 // Example: Fetch the list of Virtual Host
-omeSDK.getVirtualHost().then(response => {
+omeSDK.getVirtualHosts().then(response => {
     console.log(response.data);
 }).catch(error => {
     console.error("Error fetching Virtual Host:", error);
@@ -49,7 +49,37 @@ omeSDK.getVirtualHost().then(response => {
 
 ## Available Methods
 
-* `getVirtualHost()`: Get Virtual Host List.
+* `getVirtualHosts` Get Virtual Host List
+* `createVirtualHost` Create Virtual Host
+* `getVirtualHost` Get Virtual Host Information
+* `deleteVirtualHost` Delete Virtual Host
+* `reloadAllCertificates` Reload All Certificates
+* `reloadAllCertificate` Reload Certificate
+* `getApps` Get Application List
+* `createApp` Create Application
+* `getApp` Get Application Information
+* `patchApp` Patch Application Information
+* `deleteApp` Delete Application
+* `getOutputProfiles` Get Output Profile List
+* `createOutputProfile` Create Output Profile
+* `getOutputProfile` Get Output Profile Information
+* `deleteOutputProfile` Delete Output Profile
+* `startRecording` Start Recording
+* `stopRecording` Stop Recording
+* `getRecordingState` Get Recording State
+* `startPushPublishing` Start Push Publishing
+* `stopPushPublishing` Stop Push Publishing
+* `getPushPublishingState` Get Push Publishing State
+* `getStreams` Get Stream List
+* `createStream` Create Stream (Pull)
+* `getStream` Get Stream Info
+* `deleteStream` Delete Stream
+* `sendEvent` Send Event
+* `startDump` Start Dump
+* `stopDump` Stop Dump
+* `getVirtualHostStatistics` Get Statistics of Virtual Host
+* `getApplicationStatistics` Get Statistics of Application
+* `getStreamStatistics` Get Statistics of Stream
 
 [Add further methods here as they get added to the SDK.]
 

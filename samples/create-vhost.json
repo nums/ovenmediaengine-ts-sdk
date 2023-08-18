@@ -1,0 +1,73 @@
+[
+    {
+        "name": "vhost",
+        "host": {
+            "names": [
+                "ome-dev.airensoft.com",
+                "prod.airensoft.com"
+            ],
+            "tls": {
+                "certPath": "/etc/pki/airensoft.com/_airensoft_com.crt",
+                "chainCertPath": "/etc/pki/airensoft.com/_airensoft_com.ca-bundle",
+                "keyPath": "/etc/pki/airensoft.com/_airensoft_com.key"
+            }
+        },
+
+        "signedPolicy": {
+            "enables": {
+                "providers": "rtmp,webrtc,srt",
+                "publishers": "webrtc,llhls"
+            },
+            "policyQueryKeyName": "policy",
+            "secretKey": "aKq#1kj",
+            "signatureQueryKeyName": "signature"
+        },
+
+        "admissionWebhooks": {
+            "controlServerUrl": "https://control.server/admission",
+            "enables": {
+                "providers": "rtmp,webrtc,srt",
+                "publishers": "webrtc,llhls"
+            },
+            "secretKey": "",
+            "timeout": 3000
+        },
+        
+        "origins": {
+            "origin": [
+                {
+                    "location": "/app/rtsp",
+                    "pass": {
+                        "scheme": "rtsp",
+                        "urls": {
+                            "url": [
+                                "rtsp.server:8554/ca-01"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+
+        "originMapStore": {
+            "originHostName": "ome-dev.airensoft.com",
+            "redisServer": {
+                "auth": "!@#ovenmediaengine",
+                "host": "redis.server:6379"
+            }
+        }
+    },
+    {
+        "name": "vhost2",
+        "host": {
+            "names": [
+                "ovenmediaengine.com"
+            ],
+            "tls": {
+                "certPath": "/etc/pki/ovenmediaengine.com/_ovenmediaengine_com.crt",
+                "chainCertPath": "/etc/pki/ovenmediaengine.com/_ovenmediaengine_com.ca-bundle",
+                "keyPath": "/etc/pki/ovenmediaengine.com/_ovenmediaengine_com.key"
+            }
+        }
+    }
+]

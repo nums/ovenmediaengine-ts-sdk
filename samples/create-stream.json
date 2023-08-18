@@ -1,0 +1,13 @@
+{
+	"name": "new_stream_name",
+	"urls": [
+		"rtsp://192.168.0.160:553/app/stream",
+		"url to pull the stream from - support OVT/RTSP",
+		"Only urls with the same scheme can be sent as a group."
+  	],
+  	"properties":{
+		"persistent": false,
+		"noInputFailoverTimeoutMs": 3000,
+		"unusedStreamDeletionTimeoutMs": 60000
+  	}
+}

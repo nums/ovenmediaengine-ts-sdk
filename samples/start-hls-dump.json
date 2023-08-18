@@ -1,0 +1,6 @@
+{
+    "outputStreamName": "live",
+    "id": "dump-1",
+    "outputPath": "/tmp/",
+    "playlist" : ["llhls.m3u8"]
+  }

@@ -1,0 +1,56 @@
+[
+    {
+        "name": "test",
+        "type": "live",
+        "outputProfiles": {
+            "outputProfile": [
+                {
+                    "name": "default",
+                    "outputStreamName": "${OriginStreamName}",
+                    "encodes": {
+                        "audios": [
+                            {
+                                "name": "opus",
+                                "codec": "opus",
+                                "samplerate": 48000,
+                                "bitrate": 128000,
+                                "channel": 2,
+                                "bypassIfMatch": {
+                                    "codec": "eq"
+                                }
+                            },
+                            {
+                                "name": "aac",
+                                "codec": "aac",
+                                "samplerate": 48000,
+                                "bitrate": 128000,
+                                "channel": 2,
+                                "bypassIfMatch": {
+                                    "codec": "eq"
+                                }
+                            }
+                        ],
+                        "videos": [
+                            {
+                                "name": "bypass_video",
+                                "bypass": true
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "providers": {
+            "ovt": {},
+            "rtmp": {},
+            "rtspPull": {},
+            "srt": {},
+            "webrtc": {}
+        },
+        "publishers": {
+            "llhls": {},
+            "ovt": {},
+            "webrtc": {}
+        }
+    }
+]

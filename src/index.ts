@@ -29,8 +29,128 @@ export default class OvenMediaEngineSDK {
         });
     }
     
-    async getVirtualHost(): Promise<AxiosResponse> {
+    async getVirtualHosts(): Promise<AxiosResponse> {
         return this.api.get('/vhosts');
+    }
+
+    async createVirtualHost(vhostData: object): Promise<AxiosResponse> {
+        return this.api.post('/vhosts', vhostData);
+    }
+
+    async getVirtualHost(vhost: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}`);
+    }
+
+    async deleteVirtualHost(vhost: string): Promise<AxiosResponse> {
+        return this.api.delete(`/vhosts/${vhost}`);
+    }
+
+    async reloadAllCertificates(): Promise<AxiosResponse> {
+        return this.api.delete(`/vhosts:reloadAllCertificates`);
+    }
+
+    async reloadAllCertificate(vhost: string): Promise<AxiosResponse> {
+        return this.api.delete(`/vhosts/${vhost}:reloadCertificate`);
+    }
+
+    async getApps(vhost: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps`);
+    }
+
+    async createApp(vhost: string, appData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps`, appData);
+    }
+
+    async getApp(vhost: string, app: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps/${app}`);
+    }
+
+    async patchApp(vhost: string, app: string, appData: object): Promise<AxiosResponse> {
+        return this.api.patch(`/vhosts/${vhost}/apps/${app}`, appData);
+    }
+
+    async deleteApp(vhost: string, app: string): Promise<AxiosResponse> {
+        return this.api.delete(`/vhosts/${vhost}/apps/${app}`);
+    }
+
+    async getOutputProfiles(vhost: string, app: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps/${app}/outputProfiles`);
+    }
+
+    async createOutputProfile(vhost: string, app: string, profileData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}/outputProfiles`, profileData);
+    }
+
+    async getOutputProfile(vhost: string, app: string, profile: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps/${app}/outputProfiles/${profile}`);
+    }
+
+    async deleteOutputProfile(vhost: string, app: string, profile: string): Promise<AxiosResponse> {
+        return this.api.delete(`/vhosts/${vhost}/apps/${app}/outputProfiles/${profile}`);
+    }
+
+    async startRecording(vhost: string, app: string, streamData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}:startRecord`, streamData);
+    }
+
+    async stopRecording(vhost: string, app: string, streamData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}:stopRecord`, streamData);
+    }
+
+    async getRecordingState(vhost: string, app: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps/${app}:records`);
+    }
+
+    async startPushPublishing(vhost: string, app: string, streamData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}:startPush`, streamData);
+    }
+
+    async stopPushPublishing(vhost: string, app: string, streamData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}:stopPush`, streamData);
+    }
+
+    async getPushPublishingState(vhost: string, app: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps/${app}:pushes`);
+    }
+
+    async getStreams(vhost: string, app: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps/${app}/streams`);
+    }
+
+    async createStream(vhost: string, app: string, streamData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}/streams`, streamData);
+    }
+
+    async getStream(vhost: string, app: string, stream: string): Promise<AxiosResponse> {
+        return this.api.get(`/vhosts/${vhost}/apps/${app}/streams/${stream}`);
+    }
+
+    async deleteStream(vhost: string, app: string, stream: string): Promise<AxiosResponse> {
+        return this.api.delete(`/vhosts/${vhost}/apps/${app}/streams/${stream}`);
+    }
+
+    async sendEvent(vhost: string, app: string, stream: string, eventData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}/streams/${stream}:sendEvent`, eventData);
+    }
+
+    async startDump(vhost: string, app: string, stream: string, dumpData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}/streams/${stream}:startHlsDump`, dumpData);
+    }
+
+    async stopDump(vhost: string, app: string, stream: string, dumpData: object): Promise<AxiosResponse> {
+        return this.api.post(`/vhosts/${vhost}/apps/${app}/streams/${stream}:stopHlsDump`, dumpData);
+    }
+
+    async getVirtualHostStatistics(vhost: string) {
+        return this.api.get(`/stats/current/vhosts/${vhost}`);
+    }
+
+    async getApplicationStatistics(vhost: string, app: string) {
+        return this.api.get(`/stats/current/vhosts/${vhost}/apps/${app}`);
+    }
+
+    async getStreamStatistics(vhost: string, app: string, stream: string) {
+        return this.api.get(`/stats/current/vhosts/${vhost}/apps/${app}/streams/${stream}`);
     }
 
 }

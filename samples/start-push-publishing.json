@@ -1,0 +1,10 @@
+{
+    "id": "push-1",
+    "stream": {
+        "name": "test",
+        "variantNames": []
+    },
+    "protocol": "srt",
+    "url": "srt://{host}[:port]?mode=caller&latency=120000&timeout=500000",
+    "streamKey": ""
+}
