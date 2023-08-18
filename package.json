@@ -22,7 +22,10 @@
         "dist"
     ],
     "keywords": [
-        "oven-media-engine",
+        "OvenMediaEngine",
+        "Livestreaming",
+        "LL-HLS",
+        "WebRTC",
         "sdk",
         "typescript",
         "api"
