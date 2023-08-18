@@ -1,0 +1,36 @@
+{
+    "name": "ovenmediaengine-ts-sdk",
+    "version": "1.0.0",
+    "description": "Un SDK TypeScript pour interagir avec l'API REST d'Oven Media Engine.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "ts-node samples/testSDK.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nums/ovenmediaengine-ts-sdk"
+    },
+    "author": "Votre Nom",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "typescript": "^5.1.6"
+    },
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "oven-media-engine",
+        "sdk",
+        "typescript",
+        "api"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "ts-node": "^10.9.1"
+    }
+}

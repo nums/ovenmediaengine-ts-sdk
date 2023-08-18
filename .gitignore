@@ -1,0 +1,35 @@
+# Node modules and dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+out/
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# NPM debug logs
+npm-debug.log*
+
+# Yarn integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.test
